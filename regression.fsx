@@ -22,7 +22,7 @@ let count2to4 =
     |> float
 let fraction = count2to4 / countAll
 
-// Building a regression model with two different features sets
+// Building a regression model with two different features sets and comparing their RMSE (root mean squared error) values
 let x1 = houses.Rows |> Seq.map (fun row -> [| row.Bedrooms; row.Bathrooms; row.Sqft_living; row.Sqft_lot; row.Floors; float row.Zipcode |]) |> Seq.toArray
 let x2 = houses.Rows |> Seq.map (fun row -> [| row.Bedrooms; row.Bathrooms; row.Sqft_living; row.Sqft_lot; row.Floors; float row.Zipcode; row.Condition; row.Grade; row.Waterfront;  
     row.View; row.Sqft_above; row.Sqft_basement; row.Yr_built; row.Yr_renovated; row.Lat; row.Long; row.Sqft_living15; row.Sqft_lot15 |]) |> Seq.toArray
